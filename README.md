@@ -1,4 +1,4 @@
 Design-of-computer-programs_Final
 =================================
 
-my solutions to Peter Norvig's computational problems at www.udacity.com
+Here are my solutions to Peter Norvig's computational problems of a great course Design of Computer Programs at www.udacity.com .
