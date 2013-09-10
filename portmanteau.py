@@ -112,10 +112,8 @@ def test_natalie():
 
 """
 def longest(portmanteau):
-    "returns the length of a protmanteau as score"
+    "returns the length of a portmanteau as score"
     start, mid, end = portmanteau
     return len(start)+len(mid)+len(end)
 """
 print test_natalie()
-
-

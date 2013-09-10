@@ -36,24 +36,7 @@ def test_darts():
     assert double_out(100) in (['T20', 'D20'], ['DB', 'DB'])
     return 'test for double_out pass'
 
-"""
-My strategy: I decided to choose the result that has the highest valued
-target(s) first, e.g. always take T20 on the first dart if we can achieve
-a solution that way.  If not, try T19 first, and so on. At first I thought
-I would need three passes: first try to solve with one dart, then with two,
-then with three.  But I realized that if we include 0 as a possible dart
-value, and always try the 0 first, then we get the effect of having three
-passes, but we only have to code one pass.  So I creted ordered_points as
-a list of all possible scores that a single dart can achieve, with 0 first,
-and then descending: [0, 60, 57, ..., 1].  I iterate dart1 and dart2 over
-that; then dart3 must be whatever is left over to add up to total.  If
-dart3 is a valid element of points, then we have a solution.  But the
-solution, is a list of numbers, like [0, 60, 40]; we need to transform that
-into a list of target names, like ['T20', 'D20'], we do that by defining name(d)
-to get the name of a target that scores d.  When there are several choices,
-we must choose a double for the last dart, but for the others I prefer the
-easiest targets first: 'S' is easiest, then 'T', then 'D'.
-"""
+####
 
 singles = dict( [('S'+str(x), x) for x in range(1, 21)] + [('SB', 25)] )
 doubles = dict( [('D'+str(x), 2*x) for x in range(1, 21)] +[('DB', 50)] )
@@ -224,12 +207,10 @@ def get_value(target):
     if ring == 'D': return 2*int(section)
     return int(section)
 
-
 def same_outcome(dict1, dict2):
     "Two states are the same if all corresponding sets of locs are the same."
     return all(abs(dict1.get(key, 0) - dict2.get(key, 0)) <= 0.0001
         for key in set(dict1) | set(dict2))
-
 
 def test_outcome():
     "test that probabilities add up correctly (to 1 or miss/2 for the double ring)"
@@ -266,8 +247,3 @@ def test_darts2():
 print test_darts()
 print test_outcome()
 print test_darts2()
-"""
-print 'all double out:'
-for i in range(1, 171):
-    print double_out(i)
-"""

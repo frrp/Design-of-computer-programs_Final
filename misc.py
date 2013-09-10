@@ -1,10 +1,10 @@
 __author__ = 'fr'
-"""
+
 def same_first_last(nums):
     a = nums[0]
     b = nums[-1]
     return a == b
-
+"""
 x1 = [1, 2, 3, 1]
 x1.sort()
 print x1

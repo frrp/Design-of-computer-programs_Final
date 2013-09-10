@@ -68,6 +68,8 @@ def day_after(h1, h2):
     "Person h1 arrived 1 day after h2."
     return h1 == h2+1
 
+#another less nice solution:
+
 def logic_puzzle1():
     "Return a list of the names of the people, in the order they arrive."
     ## your code here; you are free to define additional functions if needed
@@ -90,20 +92,7 @@ def logic_puzzle1():
         if manager is not Knuth and manager is not tablet
         and designer != 4 and designer is not droid and day_after(Knuth, manager)
         #if ((laptop is writer) and (Wilkes is 1)) #or ((Wilkes is writer) and (laptop is 1))) #!
-
     )
-#    i = 0
-#    for (Hamming, Knuth, Minsky, Simon, Wilkes) in orderings:
-#        for (laptop, droid, tablet, iphone, _) in orderings:
-#            for (programmer, writer, designer, manager, _) in orderings:
-#                if day_after(Knuth, Simon):
-#                    if laptop is 3 and tablet is not 5 and ((iphone is 2) or (tablet is 2)):
-#                        if programmer is not Wilkes and writer is not Minsky:
-#                            if (((programmer is Wilkes) and (droid is Hamming)) or ((programmer is Hamming) and (droid is Wilkes))):
-#                                if manager is not Knuth and manager is not tablet and designer != 4 and designer is not droid and day_after(Knuth, manager):
-#                                #if ((laptop is writer) and (Wilkes is 1)): #or ((Wilkes is writer) and (laptop is 1))):
-#                                    i += 1
-#                                    result = (Hamming, Knuth, Minsky, Simon, Wilkes)
 
     arrived = []
     for i in result:
@@ -115,6 +104,3 @@ def logic_puzzle1():
     return arrived, result
 
 print logic_puzzle()
-
-#print 120**3
-

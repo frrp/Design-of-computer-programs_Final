@@ -71,5 +71,3 @@ def test_bowling():
     return 'tests pass'
 
 print test_bowling()
-
-#print bowling([4] * 20)
